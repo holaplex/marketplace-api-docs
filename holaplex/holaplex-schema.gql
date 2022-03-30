@@ -1,0 +1,221 @@
+scalar PublicKey
+scalar Volume
+scalar Lamports
+scalar DateTimeUtc
+
+type BidReceipt {
+    address: String!
+    tradeState: String!
+    buyer: String!
+    metadata: String!
+    auctionHouse: String!
+    price: Lamports!
+    tradeStateBump: Int!
+    tokenAccount: String
+    createdAt: DateTimeUtc!
+    canceledAt: DateTimeUtc
+}
+
+type PurchaseReceipt {
+    address: String!
+    buyer: String!
+    seller: String!
+    auctionHouse: String!
+    price: Lamports!
+    createdAt: DateTimeUtc!
+}
+
+type  ListingReceipt {
+    address: String!
+    tradeState: String!
+    seller: String!
+    metadata: String!
+    auctionHouse: String!
+    price: Lamports!
+    tradeStateBump: Int!
+    createdAt: DateTimeUtc!
+    canceledAt: DateTimeUtc
+    bookkeeper: String!
+    purchaseReceipt: String
+    tokenSize: Int!
+    bump: Int!
+}
+
+
+
+type StoreCreator { 
+    storeConfigAddress: String!
+    creatorAddress: String!
+    preview: [Nft!]!
+}
+
+type MintStats {
+    mint: String!
+    floor: Volume
+    average: Volume
+    volume24hr: Volume
+}
+
+type AuctionHouse {
+    stats: MintStats
+    address: String!
+    treasuryMint: String!
+    auctionHouseTreasury: String!
+    treasuryWithdrawalDestination: String!
+    feeWithdrawalDestination: String!
+    authority: String!
+    creator: String!
+    bump: Int!
+    treasuryBump: Int!
+    feePayerBump: Int!
+    sellerFeeBasisPoints: Int!
+    requiresSignOff: Boolean!
+    canChangeSalePrice: Boolean!
+    auctionHouseFeeAccount: String!
+}
+
+type Bid {
+    listingAddress: String!
+    bidderAddress: String!
+    lastBidTime: String!
+    lastBidAmount: Lamports!
+    cancelled: Boolean!
+    listing: Listing
+}
+type NftCreator {
+    address: String!
+    metadataAddress: String!
+    share: Int!
+    verified: Boolean!
+    position: Int
+}
+
+type NftOwner { 
+    address: String!
+}
+
+type NftAttribute {
+    metadataAddress: String!
+    value: String!
+    traitType: String!
+}
+
+type Nft {
+    address: String!
+    name: String!
+    sellerFeeBasisPoints: Int!
+    mintAddress: String!
+    primarySaleHappened: Boolean!
+    description: String!
+    image(width: Int): String!
+    creators: [NftCreator!]!
+    attributes: [NftAttribute!]!
+    owner: NftOwner
+    listings: [ListingReceipt!]!
+    purchases: [PurchaseReceipt!]!
+    offers: [BidReceipt!]!
+}
+
+type Profile {
+    handle: String!
+    profileImageUrlLowres: String!
+    profileImageUrlHighres: String!
+    bannerImageUrl: String!
+}
+
+type AttributeVariant {
+    name: String!
+    count: Int!
+}
+
+type AttributeGroup { 
+    name: String!
+    variants: [AttributeVariant!]!
+}
+
+type Creator {
+    address: String!
+    attributeGroups: [AttributeGroup!]!
+}
+
+type Wallet {
+    address: String!
+    bids: [Bid!]!
+}
+
+type Listing {
+    address: String!
+    extAddress: String!
+    cacheAddress: String!
+    storeAddress: String!
+    endsAt: DateTimeUtc
+    ended: Boolean!
+    storefront: Storefront
+    nfts: [Nft!]!
+    bids: [Bid!]!
+}
+type Storefront {
+    address: String!
+    ownerAddress: String!
+    subdomain: String!
+    title: String!
+    description: String!
+    faviconUrl: String!
+    logoUrl: String!
+    bannerUrl: String!
+}
+
+type MarketStats { 
+    nfts: Volume
+}
+type Marketplace {
+    configAddress: String!
+    subdomain: String!
+    name: String!
+    description: String!
+    logoUrl: String!
+    bannerUrl: String!
+    ownerAddress: String!
+    auctionHouseAddress: String!
+    storeAddress: String
+    auctionHouse: AuctionHouse
+    creators: [StoreCreator!]!
+    stats: MarketStats
+}
+
+type Denylist {
+    storefronts: [PublicKey!]!
+    listings: [PublicKey!]!
+}
+
+type AttributeFilter {
+    traitType: String!
+    values: [String!]!
+}
+
+type Query {
+
+    "Query (and filter) all NFTs, returns a list of NFTs."
+    nfts(
+        owners: [PublicKey!]
+        creators: [PublicKey!]
+        # attributes: [AttributeFilter!]
+        listed: [PublicKey!]
+        limit: Int!
+        offset: Int!
+    ): [Nft!]!
+    
+    "Get a Solana profile from a Twitter handle."
+    profile(handle: String!): Profile
+    
+    creator(address: String!): Creator!
+    wallet(address: String!): Wallet
+    listings: [Listing!]!
+    nft(address: String!): Nft!
+    storefront(subdomain: String!): Storefront
+    storefronts: [Storefront!]!
+    marketplace(subdomain: String!): Marketplace
+    
+    "Return Holaplex Denylist"
+    denylist: Denylist!
+}
