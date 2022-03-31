@@ -241,7 +241,7 @@ info:
   # This is non-standard and optional. If omitted, will use "title". Also only relevant
   # when building non-embedded.
   x-htmlTitle: Let us power your NFT marketplace
-  termsOfService: 'https://holaplex.com/tos'
+  termsOfService: 'https://docs.google.com/document/d/1jskpoCdDm7DU2IbeXwRhhl5LGiNhonAx2HsmfJlDsEs/edit'
   contact:
     name: Holaplex Support
     email: support@holaplex.com
