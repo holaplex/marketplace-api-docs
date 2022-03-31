@@ -247,8 +247,8 @@ info:
     email: support@holaplex.com
     url: https://holaplex.com/support
   license:
-    name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    name: AGLP v3.0
+    url: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
 
   # A non-standard array of items to display in your Introduction Area
   # x-introItems:
