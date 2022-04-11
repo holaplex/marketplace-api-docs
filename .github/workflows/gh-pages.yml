@@ -8,13 +8,17 @@ on:
 
 jobs:
   build:
-    name: Run Spectral
+    name: Build Docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-        yarn install 
-        yarn build config.yml
+      - uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build docs
+        run: yarn build config.yml
   deploy:
     runs-on: ubuntu-20.04
     concurrency:
