@@ -19,6 +19,8 @@ jobs:
         run: yarn install
       - name: Build docs
         run: yarn build config.yml
+      - name: Copy CNAME to public
+        run: cp CNAME public/
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
