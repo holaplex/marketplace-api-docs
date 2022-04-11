@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build Docs
+    name: Build Static Docs Site
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,11 +20,12 @@ jobs:
       - name: Build docs
         run: yarn build config.yml
   deploy:
+    name: Deploy to Github Pages
     runs-on: ubuntu-20.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Deploy
+      - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
