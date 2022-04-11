@@ -235,7 +235,7 @@ info:
   #
   ##############################################
 
-  description: Holaplex Marketplace GraphQL Docs
+  description: Holaplex Marketplace GraphQL Documentation
   version: 1.0.0
   title: Let us power your NFT marketplace
   # This is non-standard and optional. If omitted, will use "title". Also only relevant
