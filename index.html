@@ -29,6 +29,7 @@
           <a href="#operation-listings-Queries"> listings </a>
           <a href="#operation-marketplace-Queries"> marketplace </a>
           <a href="#operation-nft-Queries"> nft </a>
+          <a href="#operation-nftcounts-Queries"> nftCounts </a>
           <a href="#operation-nfts-Queries"> nfts </a>
           <a href="#operation-profile-Queries"> profile </a>
           <a href="#operation-storefront-Queries"> storefront </a>
@@ -42,6 +43,7 @@
           <a href="#definition-Bid"> Bid </a>
           <a href="#definition-BidReceipt"> BidReceipt </a>
           <a href="#definition-Boolean"> Boolean </a>
+          <a href="#definition-ConnectionCounts"> ConnectionCounts </a>
           <a href="#definition-Creator"> Creator </a>
           <a href="#definition-CreatorCounts"> CreatorCounts </a>
           <a href="#definition-DateTimeUtc"> DateTimeUtc </a>
@@ -57,6 +59,7 @@
           <a href="#definition-Nft"> Nft </a>
           <a href="#definition-NftActivity"> NftActivity </a>
           <a href="#definition-NftAttribute"> NftAttribute </a>
+          <a href="#definition-NftCount"> NftCount </a>
           <a href="#definition-NftCreator"> NftCreator </a>
           <a href="#definition-NftOwner"> NftOwner </a>
           <a href="#definition-Profile"> Profile </a>
@@ -68,6 +71,7 @@
           <a href="#definition-TwitterProfile"> TwitterProfile </a>
           <a href="#definition-Volume"> Volume </a>
           <a href="#definition-Wallet"> Wallet </a>
+          <a href="#definition-WalletNftCount"> WalletNftCount </a>
         </nav>
       </div>
       <div id="docs" class="row collapse expanded drawer" data-drawer>
@@ -176,7 +180,7 @@ https://graph.holaplex.com/v1
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"from"</span>: [<span class="hljs-string">PublicKey</span>],
   <span class="hljs-attr">"to"</span>: [<span class="hljs-string">PublicKey</span>],
-  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">123</span>,
   <span class="hljs-attr">"offset"</span>: <span class="hljs-number">987</span>
 }
 </code></pre> </body>
@@ -391,8 +395,8 @@ https://graph.holaplex.com/v1
     <span class="hljs-attr">"listings"</span>: [
       {
         <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-        <span class="hljs-attr">"extAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-        <span class="hljs-attr">"cacheAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"extAddress"</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">"cacheAddress"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"storeAddress"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"endsAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
         <span class="hljs-attr">"ended"</span>: <span class="hljs-literal">true</span>,
@@ -472,7 +476,7 @@ https://graph.holaplex.com/v1
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -488,14 +492,14 @@ https://graph.holaplex.com/v1
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"marketplace"</span>: {
-      <span class="hljs-attr">"configAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"configAddress"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"bannerUrl"</span>: <span class="hljs-string">"abc123"</span>,
       <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"auctionHouseAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"auctionHouseAddress"</span>: <span class="hljs-string">"abc123"</span>,
       <span class="hljs-attr">"storeAddress"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">AuctionHouse</span>,
       <span class="hljs-attr">"creators"</span>: [<span class="hljs-string">StoreCreator</span>],
@@ -594,12 +598,12 @@ https://graph.holaplex.com/v1
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"nft"</span>: {
       <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"sellerFeeBasisPoints"</span>: <span class="hljs-number">123</span>,
-      <span class="hljs-attr">"mintAddress"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"primarySaleHappened"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"mintAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"primarySaleHappened"</span>: <span class="hljs-literal">true</span>,
       <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"image"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"image"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"creators"</span>: [<span class="hljs-string">NftCreator</span>],
       <span class="hljs-attr">"attributes"</span>: [<span class="hljs-string">NftAttribute</span>],
       <span class="hljs-attr">"owner"</span>: <span class="hljs-string">NftOwner</span>,
@@ -610,6 +614,68 @@ https://graph.holaplex.com/v1
     }
   }
 }
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <span id="path-nftcounts"></span>
+          <div id="operation-nftcounts-Queries" class="operation panel" data-traverse-target="operation-nftcounts-Queries">
+            <h2 class="operation-name "> <code>nftCounts</code> </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body"> </section>
+                <section class="swagger-responses"> Returns a
+                  <a href="#definition-NftCount"><code>NftCount!</code></a>
+                </section>
+                <br>
+                <section class="swagger-request-params">
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td><code>creators</code> -
+                        <a href="#definition-PublicKey"><code>[PublicKey!]!</code></a>
+                      </td>
+                      <td> creators of nfts </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h4>Example</h4>
+                  <h5>Query</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> nftCounts<span class="hljs-tag">(<span class="hljs-code">$creators</span>: <span class="hljs-type">[PublicKey!</span>]!)</span> <span class="hljs-tag">{
+  <span class="hljs-symbol">nftCounts<span class="hljs-tag">(creators: <span class="hljs-code">$creators</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">total</span>
+    <span class="hljs-symbol">listed</span>
+  }</span></span>
+}</span></span>
+</code></pre> </body>
+                  </html>
+                  <h5>Variables</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"creators"</span>: [<span class="hljs-string">PublicKey</span>]}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy"> </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response </h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"data"</span>: {<span class="hljs-attr">"nftCounts"</span>: {<span class="hljs-attr">"total"</span>: <span class="hljs-number">987</span>, <span class="hljs-attr">"listed"</span>: <span class="hljs-number">987</span>}}}
 </code></pre> </body>
                   </html>
                 </section>
@@ -726,8 +792,8 @@ https://graph.holaplex.com/v1
   <span class="hljs-attr">"offerers"</span>: [<span class="hljs-string">PublicKey</span>],
   <span class="hljs-attr">"attributes"</span>: [<span class="hljs-string">AttributeFilter</span>],
   <span class="hljs-attr">"listed"</span>: [<span class="hljs-string">PublicKey</span>],
-  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">123</span>,
-  <span class="hljs-attr">"offset"</span>: <span class="hljs-number">123</span>
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"offset"</span>: <span class="hljs-number">987</span>
 }
 </code></pre> </body>
                   </html>
@@ -745,8 +811,8 @@ https://graph.holaplex.com/v1
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"nfts"</span>: [
       {
-        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"sellerFeeBasisPoints"</span>: <span class="hljs-number">123</span>,
         <span class="hljs-attr">"mintAddress"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"primarySaleHappened"</span>: <span class="hljs-literal">false</span>,
@@ -802,6 +868,7 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> profile<span class="hljs-tag">(<span class="hljs-code">$handle</span>:<span class="hljs-type"> String!</span>)</span> <span class="hljs-tag">{
   <span class="hljs-symbol">profile<span class="hljs-tag">(handle: <span class="hljs-code">$handle</span>)</span> <span class="hljs-tag">{
+    <span class="hljs-symbol">walletAddress</span>
     <span class="hljs-symbol">handle</span>
     <span class="hljs-symbol">profileImageUrlLowres</span>
     <span class="hljs-symbol">profileImageUrlHighres</span>
@@ -829,9 +896,10 @@ https://graph.holaplex.com/v1
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"profile"</span>: {
+      <span class="hljs-attr">"walletAddress"</span>: <span class="hljs-string">"abc123"</span>,
       <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"abc123"</span>,
       <span class="hljs-attr">"profileImageUrlLowres"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"profileImageUrlHighres"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"profileImageUrlHighres"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"bannerImageUrl"</span>: <span class="hljs-string">"abc123"</span>
     }
   }
@@ -912,13 +980,13 @@ https://graph.holaplex.com/v1
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"storefront"</span>: {
       <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"abc123"</span>,
+      <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"xyz789"</span>,
       <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
-      <span class="hljs-attr">"faviconUrl"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"faviconUrl"</span>: <span class="hljs-string">"abc123"</span>,
       <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"abc123"</span>,
-      <span class="hljs-attr">"bannerUrl"</span>: <span class="hljs-string">"xyz789"</span>
+      <span class="hljs-attr">"bannerUrl"</span>: <span class="hljs-string">"abc123"</span>
     }
   }
 }
@@ -973,8 +1041,8 @@ https://graph.holaplex.com/v1
     <span class="hljs-attr">"storefronts"</span>: [
       {
         <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-        <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"title"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"faviconUrl"</span>: <span class="hljs-string">"abc123"</span>,
@@ -1008,7 +1076,7 @@ https://graph.holaplex.com/v1
                     </tr>
                     <tr>
                       <td><code>address</code> -
-                        <a href="#definition-String"><code>String!</code></a>
+                        <a href="#definition-PublicKey"><code>PublicKey!</code></a>
                       </td>
                       <td> </td>
                     </tr>
@@ -1021,7 +1089,7 @@ https://graph.holaplex.com/v1
                   <h5>Query</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> wallet<span class="hljs-tag">(<span class="hljs-code">$address</span>:<span class="hljs-type"> String!</span>)</span> <span class="hljs-tag">{
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-keyword">query</span> wallet<span class="hljs-tag">(<span class="hljs-code">$address</span>:<span class="hljs-type"> PublicKey!</span>)</span> <span class="hljs-tag">{
   <span class="hljs-symbol">wallet<span class="hljs-tag">(address: <span class="hljs-code">$address</span>)</span> <span class="hljs-tag">{
     <span class="hljs-symbol">address</span>
     <span class="hljs-symbol">bids <span class="hljs-tag">{
@@ -1030,6 +1098,12 @@ https://graph.holaplex.com/v1
     <span class="hljs-symbol">profile <span class="hljs-tag">{
       <span class="hljs-type">...TwitterProfileFragment</span>
     }</span></span>
+    <span class="hljs-symbol">connectionCounts <span class="hljs-tag">{
+      <span class="hljs-type">...ConnectionCountsFragment</span>
+    }</span></span>
+    <span class="hljs-symbol">nftCounts <span class="hljs-tag">{
+      <span class="hljs-type">...WalletNftCountFragment</span>
+    }</span></span>
   }</span></span>
 }</span></span>
 </code></pre> </body>
@@ -1037,7 +1111,7 @@ https://graph.holaplex.com/v1
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"address"</span>: <span class="hljs-string">PublicKey</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -1053,9 +1127,11 @@ https://graph.holaplex.com/v1
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"wallet"</span>: {
-      <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
+      <span class="hljs-attr">"address"</span>: <span class="hljs-string">PublicKey</span>,
       <span class="hljs-attr">"bids"</span>: [<span class="hljs-string">Bid</span>],
-      <span class="hljs-attr">"profile"</span>: <span class="hljs-string">TwitterProfile</span>
+      <span class="hljs-attr">"profile"</span>: <span class="hljs-string">TwitterProfile</span>,
+      <span class="hljs-attr">"connectionCounts"</span>: <span class="hljs-string">ConnectionCounts</span>,
+      <span class="hljs-attr">"nftCounts"</span>: <span class="hljs-string">WalletNftCount</span>
     }
   }
 }
@@ -1103,7 +1179,7 @@ https://graph.holaplex.com/v1
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"traitType"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"values"</span>: [<span class="hljs-string">"xyz789"</span>]}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"traitType"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"values"</span>: [<span class="hljs-string">"abc123"</span>]}
 </code></pre> </body>
                   </html>
                 </section>
@@ -1189,7 +1265,7 @@ https://graph.holaplex.com/v1
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"count"</span>: <span class="hljs-number">123</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"count"</span>: <span class="hljs-number">987</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -1312,19 +1388,19 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"stats"</span>: <span class="hljs-string">MintStats</span>,
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"treasuryMint"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"treasuryMint"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"auctionHouseTreasury"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"treasuryWithdrawalDestination"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"feeWithdrawalDestination"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"authority"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"feeWithdrawalDestination"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"authority"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"creator"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"bump"</span>: <span class="hljs-number">987</span>,
-  <span class="hljs-attr">"treasuryBump"</span>: <span class="hljs-number">987</span>,
+  <span class="hljs-attr">"bump"</span>: <span class="hljs-number">123</span>,
+  <span class="hljs-attr">"treasuryBump"</span>: <span class="hljs-number">123</span>,
   <span class="hljs-attr">"feePayerBump"</span>: <span class="hljs-number">123</span>,
-  <span class="hljs-attr">"sellerFeeBasisPoints"</span>: <span class="hljs-number">987</span>,
-  <span class="hljs-attr">"requiresSignOff"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"canChangeSalePrice"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sellerFeeBasisPoints"</span>: <span class="hljs-number">123</span>,
+  <span class="hljs-attr">"requiresSignOff"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"canChangeSalePrice"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"auctionHouseFeeAccount"</span>: <span class="hljs-string">"abc123"</span>
 }
 </code></pre> </body>
@@ -1394,11 +1470,11 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"listingAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"bidderAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"listingAddress"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"bidderAddress"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"lastBidTime"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"lastBidAmount"</span>: <span class="hljs-string">Lamports</span>,
-  <span class="hljs-attr">"cancelled"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"cancelled"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"listing"</span>: <span class="hljs-string">Listing</span>
 }
 </code></pre> </body>
@@ -1497,12 +1573,12 @@ https://graph.holaplex.com/v1
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"tradeState"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"buyer"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"buyer"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"price"</span>: <span class="hljs-string">Lamports</span>,
   <span class="hljs-attr">"tradeStateBump"</span>: <span class="hljs-number">987</span>,
-  <span class="hljs-attr">"tokenAccount"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"tokenAccount"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
   <span class="hljs-attr">"canceledAt"</span>: <span class="hljs-string">DateTimeUtc</span>
 }
@@ -1528,6 +1604,49 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-gql"><span class="hljs-symbol"><span class="hljs-literal">false</span></span>
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ConnectionCounts" class="definition panel" data-traverse-target="definition-ConnectionCounts">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/ConnectionCounts"></a>
+              <p><code>ConnectionCounts</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="fromCount"> <code>fromCount</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="toCount"> <code>toCount</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"fromCount"</span>: <span class="hljs-number">987</span>, <span class="hljs-attr">"toCount"</span>: <span class="hljs-number">123</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -1646,7 +1765,7 @@ https://graph.holaplex.com/v1
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"creations"</span>: <span class="hljs-number">987</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"creations"</span>: <span class="hljs-number">123</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -1793,7 +1912,7 @@ https://graph.holaplex.com/v1
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">987</span>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">123</span>
 </code></pre> </body>
                   </html>
                 </section>
@@ -1905,9 +2024,9 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"extAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"cacheAddress"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"extAddress"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"cacheAddress"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"storeAddress"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"endsAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
   <span class="hljs-attr">"ended"</span>: <span class="hljs-literal">false</span>,
@@ -1931,6 +2050,9 @@ https://graph.holaplex.com/v1
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>An NFT listing receipt</p>
+                </section>
                 <section class="json-schema-properties-blank">
                   <table>
                     <tr>
@@ -2025,16 +2147,16 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"tradeState"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"seller"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"tradeState"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"seller"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"price"</span>: <span class="hljs-string">Lamports</span>,
-  <span class="hljs-attr">"tradeStateBump"</span>: <span class="hljs-number">123</span>,
+  <span class="hljs-attr">"tradeStateBump"</span>: <span class="hljs-number">987</span>,
   <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
   <span class="hljs-attr">"canceledAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
   <span class="hljs-attr">"bookkeeper"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"purchaseReceipt"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"purchaseReceipt"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"tokenSize"</span>: <span class="hljs-number">987</span>,
   <span class="hljs-attr">"bump"</span>: <span class="hljs-number">987</span>
 }
@@ -2178,15 +2300,15 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"configAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"configAddress"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"bannerUrl"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"auctionHouseAddress"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"storeAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"auctionHouseAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"storeAddress"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">AuctionHouse</span>,
   <span class="hljs-attr">"creators"</span>: [<span class="hljs-string">StoreCreator</span>],
   <span class="hljs-attr">"stats"</span>: <span class="hljs-string">MarketStats</span>
@@ -2399,11 +2521,11 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"sellerFeeBasisPoints"</span>: <span class="hljs-number">123</span>,
   <span class="hljs-attr">"mintAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"primarySaleHappened"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"primarySaleHappened"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"image"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"creators"</span>: [<span class="hljs-string">NftCreator</span>],
   <span class="hljs-attr">"attributes"</span>: [<span class="hljs-string">NftAttribute</span>],
@@ -2486,13 +2608,13 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"metadata"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"price"</span>: <span class="hljs-string">Lamports</span>,
   <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">DateTimeUtc</span>,
-  <span class="hljs-attr">"wallets"</span>: [<span class="hljs-string">"abc123"</span>],
-  <span class="hljs-attr">"activityType"</span>: <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"wallets"</span>: [<span class="hljs-string">"xyz789"</span>],
+  <span class="hljs-attr">"activityType"</span>: <span class="hljs-string">"xyz789"</span>
 }
 </code></pre> </body>
                   </html>
@@ -2543,6 +2665,64 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{<span class="hljs-attr">"metadataAddress"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"value"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"traitType"</span>: <span class="hljs-string">"abc123"</span>}
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-NftCount" class="definition panel" data-traverse-target="definition-NftCount">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/NftCount"></a>
+              <p><code>NftCount</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="total"> <code>total</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="listed"> <code>listed</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="no-top-border">
+                        <div class="field-arguments">
+                          <p class="field-arguments-header"> Arguments </p>
+                          <div class="field-argument">
+                            <p class="field-argument-name"><code>auctionHouses</code> -
+                              <a href="#definition-PublicKey"><code>[PublicKey!]</code></a>
+                            </p>
+                            <p>
+                              <p>a list of auction house public keys</p>
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"total"</span>: <span class="hljs-number">123</span>, <span class="hljs-attr">"listed"</span>: <span class="hljs-number">123</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -2616,10 +2796,10 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"metadataAddress"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"share"</span>: <span class="hljs-number">987</span>,
-  <span class="hljs-attr">"verified"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"verified"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"position"</span>: <span class="hljs-number">123</span>,
   <span class="hljs-attr">"twitterHandle"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"profile"</span>: <span class="hljs-string">TwitterProfile</span>
@@ -2707,6 +2887,12 @@ https://graph.holaplex.com/v1
                       <th>Description</th>
                     </tr>
                     <tr>
+                      <td data-property-name="walletAddress"> <code>walletAddress</code> -
+                        <a href="#definition-String"><code>String</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
                       <td data-property-name="handle"> <code>handle</code> -
                         <a href="#definition-String"><code>String!</code></a>
                       </td>
@@ -2739,6 +2925,7 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"walletAddress"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"profileImageUrlLowres"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"profileImageUrlHighres"</span>: <span class="hljs-string">"abc123"</span>,
@@ -2840,7 +3027,7 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"buyer"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"seller"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"auctionHouse"</span>: <span class="hljs-string">"xyz789"</span>,
@@ -2897,7 +3084,7 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"storeConfigAddress"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"creatorAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"creatorAddress"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"preview"</span>: [<span class="hljs-string">Nft</span>]
 }
 </code></pre> </body>
@@ -2983,12 +3170,12 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"ownerAddress"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"subdomain"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"title"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"faviconUrl"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"bannerUrl"</span>: <span class="hljs-string">"abc123"</span>
 }
 </code></pre> </body>
@@ -3059,7 +3246,7 @@ https://graph.holaplex.com/v1
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"profileImageUrl"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"profileImageUrl"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"bannerImageUrl"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>
 }
@@ -3113,7 +3300,7 @@ https://graph.holaplex.com/v1
                     </tr>
                     <tr>
                       <td data-property-name="address"> <code>address</code> -
-                        <a href="#definition-String"><code>String!</code></a>
+                        <a href="#definition-PublicKey"><code>PublicKey!</code></a>
                       </td>
                       <td> </td>
                     </tr>
@@ -3129,6 +3316,33 @@ https://graph.holaplex.com/v1
                       </td>
                       <td> </td>
                     </tr>
+                    <tr>
+                      <td data-property-name="connectionCounts"> <code>connectionCounts</code> -
+                        <a href="#definition-ConnectionCounts"><code>ConnectionCounts!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="nftCounts"> <code>nftCounts</code> -
+                        <a href="#definition-WalletNftCount"><code>WalletNftCount!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="no-top-border">
+                        <div class="field-arguments">
+                          <p class="field-arguments-header"> Arguments </p>
+                          <div class="field-argument">
+                            <p class="field-argument-name"><code>creators</code> -
+                              <a href="#definition-PublicKey"><code>[PublicKey!]</code></a>
+                            </p>
+                            <p>
+                              <p>a list of auction house public keys</p>
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </table>
                 </section>
               </div>
@@ -3138,10 +3352,91 @@ https://graph.holaplex.com/v1
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"address"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"address"</span>: <span class="hljs-string">PublicKey</span>,
   <span class="hljs-attr">"bids"</span>: [<span class="hljs-string">Bid</span>],
-  <span class="hljs-attr">"profile"</span>: <span class="hljs-string">TwitterProfile</span>
+  <span class="hljs-attr">"profile"</span>: <span class="hljs-string">TwitterProfile</span>,
+  <span class="hljs-attr">"connectionCounts"</span>: <span class="hljs-string">ConnectionCounts</span>,
+  <span class="hljs-attr">"nftCounts"</span>: <span class="hljs-string">WalletNftCount</span>
 }
+</code></pre> </body>
+                  </html>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-WalletNftCount" class="definition panel" data-traverse-target="definition-WalletNftCount">
+            <div class="definition-tags">
+              <a class="label" href="#tag-types">Types</a>
+            </div>
+            <h2 class="panel-title">
+              <a name="/definitions/WalletNftCount"></a>
+              <p><code>WalletNftCount</code></p>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties-blank">
+                  <table>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td data-property-name="owned"> <code>owned</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="offered"> <code>offered</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="no-top-border">
+                        <div class="field-arguments">
+                          <p class="field-arguments-header"> Arguments </p>
+                          <div class="field-argument">
+                            <p class="field-argument-name"><code>auctionHouses</code> -
+                              <a href="#definition-PublicKey"><code>[PublicKey!]</code></a>
+                            </p>
+                            <p>
+                              <p>auction houses to scope wallet counts</p>
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-property-name="listed"> <code>listed</code> -
+                        <a href="#definition-Int"><code>Int!</code></a>
+                      </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="no-top-border">
+                        <div class="field-arguments">
+                          <p class="field-arguments-header"> Arguments </p>
+                          <div class="field-argument">
+                            <p class="field-argument-name"><code>auctionHouses</code> -
+                              <a href="#definition-PublicKey"><code>[PublicKey!]</code></a>
+                            </p>
+                            <p>
+                              <p>auction houses to scope wallet counts</p>
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"owned"</span>: <span class="hljs-number">123</span>, <span class="hljs-attr">"offered"</span>: <span class="hljs-number">987</span>, <span class="hljs-attr">"listed"</span>: <span class="hljs-number">987</span>}
 </code></pre> </body>
                   </html>
                 </section>
