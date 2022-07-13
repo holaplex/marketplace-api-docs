@@ -36,7 +36,7 @@ introspection:
   # URL of the GraphQL endpoint to hit if you want to generate the documentation based on live Introspection Query results
   # NOTE: If not using introspection.url OR servers[], you need to provide x-swaggerUrl
   # to satisfy the URL Swagger requirement.
-  url: https://graph.holaplex.com/v1
+  url: https://shared.holaplex.tools/v1
 
   # If using the "url" option above, any headers (such as Authorization) can be added here. This
   # can also be added via the CLI options
@@ -200,12 +200,12 @@ servers:
 
   # same format as for OpenAPI Specification https://swagger.io/specification/#server-object
 
-  - url: https://graph.holaplex.com/v1
-    description: Production Server
+  - url: https://shared.holaplex.tools/v1
+    description: Public Server
     # Indicates to use this server's URL as the typical GraphQL request base in the documentation
     # If no server entries have this indicator, the first server's URL will be used.
     # If no server entries are defined at all, the Introspection URL will be used.
-    production: true
+    production: false
 
 info:
   # Tries to adhere to OpenAPI Specification https://swagger.io/specification/#info-object
